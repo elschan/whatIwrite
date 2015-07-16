@@ -1,9 +1,20 @@
-<% @posts.each do |post| %>
-<div>
-  <p> <%=post.title %> </p>   
-    
-  <p> <%= post.text %> </p>
-  <%=raw tag_links(post.tag_list) %>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <div class="row">
+    <%= link_to "Create a post", new_post_path %><br><br>
+  </div>
+
+  <% @posts.each do |post| %>
+  
+   <p><strong> <%=post.title %></strong> </p>   
+    <p><%= post.text %></p>
+    <p><%=raw tag_links(post.tag_list) %></p>
+    <p><em><%= post.created_at %><em><p>
+ 
+  <% end %>
+
 </div>
-<% end %>
+<div class="col-md-4"></div>
+
+
 
