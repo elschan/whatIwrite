@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+<div>
+  <p> <%=post.title %> </p>   
+    
+  <p> <%= post.text %> </p>
+  <%=raw tag_links(post.tag_list) %>
+</div>
+<% end %>
+
